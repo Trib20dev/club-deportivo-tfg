@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: club-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/club_deportivo
+    username: club_app_user
+    password: app_pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    user: club_admin
+    password: admin_pass
+    locations: classpath:db/migration
+    baseline-on-migrate: true
